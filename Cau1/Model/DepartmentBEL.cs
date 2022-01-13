@@ -10,6 +10,6 @@ namespace Cau1.Model
     {
         public List<EmployeeBEL> Employees { get; set; }
         public int IdDepartment { set; get; }
-        public String Name { set; get; }
+        public String NameDepartment { set; get; }
     }
 }

@@ -19,7 +19,7 @@ namespace Cau1.Model
         {
             get
             {
-                return Department.Name;
+                return Department.NameDepartment;
             }
 
 

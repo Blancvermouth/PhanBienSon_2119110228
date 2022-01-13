@@ -23,7 +23,7 @@ namespace Cau1.DAL
             {
                 Department Depart = new Department();
                 Depart.IdDepartment = int.Parse(reader["IdDepartment"].ToString());
-                Depart.Name = reader["name"].ToString();
+                Depart.NameDepartment = reader["NameDepartment"].ToString();
                 lstDepartment.Add(Depart);
             }
             conn.Close();
@@ -41,7 +41,7 @@ namespace Cau1.DAL
             if (reader.HasRows && reader.Read())
             {
                 Department.IdDepartment = int.Parse(reader["IdDepartment"].ToString());
-                Department.Name = reader["name"].ToString();
+                Department.NameDepartment = reader["NameDepartment"].ToString();
             }
             conn.Close();
             return Department;

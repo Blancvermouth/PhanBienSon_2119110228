@@ -33,7 +33,7 @@ namespace Cau1
             {
                 cbdonvi.Items.Add(depart);
             }
-            cbdonvi.DisplayMember = "Name";
+            cbdonvi.DisplayMember = "NameDepartment";
         }
         private void btthem_Click(object sender, EventArgs e)
         {
@@ -60,7 +60,7 @@ namespace Cau1
 
                 EmployBAL.Them(emp);
 
-                dgvnhanvien.Rows.Add(emp.IdEmployee, emp.Name, emp.DateBirth, emp.Gender, emp.PlaceBirth, emp.Department.Name);
+                dgvnhanvien.Rows.Add(emp.IdEmployee, emp.Name, emp.DateBirth, emp.Gender, emp.PlaceBirth, emp.Department.NameDepartment);
             }
         }
         public bool kiemtra()
@@ -120,9 +120,9 @@ namespace Cau1
 
         private void btxoa_Click(object sender, EventArgs e)
         {
-            DialogResult f = MessageBox.Show("Ban co thuc su muon xoa?", "Thong Bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (f == DialogResult.Yes)
-            {
+            //DialogResult f = MessageBox.Show("Ban co thuc su muon xoa?", "Thong Bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //if (f == DialogResult.Yes)
+            //{
                 EmployeeBEL emp = new EmployeeBEL();
                 emp.IdEmployee = tbma.Text;
                 emp.Name = tbhoten.Text;
@@ -134,7 +134,7 @@ namespace Cau1
                 EmployBAL.Xoa(emp);
                 int idx = dgvnhanvien.CurrentCell.RowIndex;
                 dgvnhanvien.Rows.RemoveAt(idx);
-        }
+        //}
     }
 
         private void btsua_Click(object sender, EventArgs e)
