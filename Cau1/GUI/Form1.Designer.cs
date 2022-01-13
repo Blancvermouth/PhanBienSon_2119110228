@@ -160,6 +160,7 @@
             this.dgvnhanvien.RowTemplate.Height = 28;
             this.dgvnhanvien.Size = new System.Drawing.Size(972, 249);
             this.dgvnhanvien.TabIndex = 11;
+            this.dgvnhanvien.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvnhanvien_RowEnter);
             // 
             // ma
             // 
@@ -217,6 +218,7 @@
             this.btthem.TabIndex = 12;
             this.btthem.Text = "Thêm";
             this.btthem.UseVisualStyleBackColor = true;
+            this.btthem.Click += new System.EventHandler(this.btthem_Click);
             // 
             // btxoa
             // 
@@ -268,6 +270,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvnhanvien)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
