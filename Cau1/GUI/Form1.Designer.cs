@@ -228,6 +228,7 @@
             this.btxoa.TabIndex = 13;
             this.btxoa.Text = "Xóa";
             this.btxoa.UseVisualStyleBackColor = true;
+            this.btxoa.Click += new System.EventHandler(this.btxoa_Click);
             // 
             // btsua
             // 

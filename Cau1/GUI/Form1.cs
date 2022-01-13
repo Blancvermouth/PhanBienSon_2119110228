@@ -117,5 +117,24 @@ namespace Cau1
                 cbdonvi.Text = row.Cells[5].Value.ToString();
             }
         }
+
+        private void btxoa_Click(object sender, EventArgs e)
+        {
+            DialogResult f = MessageBox.Show("Ban co thuc su muon xoa?", "Thong Bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (f == DialogResult.Yes)
+            {
+                EmployeeBEL emp = new EmployeeBEL();
+                emp.IdEmployee = tbma.Text;
+                emp.Name = tbhoten.Text;
+                emp.DateBirth = DateTime.Parse(dtpngaysinh.Value.Date.ToString());
+                emp.Gender = chbgioitinh.Text;
+                emp.PlaceBirth = tbnoisinh.Text;
+
+
+                EmployBAL.Xoa(emp);
+                int idx = dgvnhanvien.CurrentCell.RowIndex;
+                dgvnhanvien.Rows.RemoveAt(idx);
+        }
+    }
     }
 }
