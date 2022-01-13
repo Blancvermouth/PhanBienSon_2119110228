@@ -136,5 +136,49 @@ namespace Cau1
                 dgvnhanvien.Rows.RemoveAt(idx);
         }
     }
+
+        private void btsua_Click(object sender, EventArgs e)
+        {
+            if (kiemtra())
+            {
+                DataGridViewRow row = dgvnhanvien.CurrentRow;
+
+                EmployeeBEL empp = new EmployeeBEL();
+                empp.IdEmployee = tbma.Text;
+                empp.Name = tbhoten.Text;
+                empp.DateBirth = DateTime.Parse(dtpngaysinh.Value.Date.ToString());
+
+
+                if (chbgioitinh.Checked)
+                {
+                    empp.Gender = "NAM";
+                }
+                else
+                {
+                    empp.Gender = "NU";
+                }
+                empp.PlaceBirth = tbnoisinh.Text;
+                empp.Department = (Department)cbdonvi.SelectedItem;
+
+                EmployBAL.Sua(empp);
+
+                row.Cells[0].Value = empp.IdEmployee;
+                row.Cells[1].Value = empp.Name;
+                row.Cells[2].Value = empp.DateBirth;
+                row.Cells[3].Value = empp.Gender;
+                row.Cells[4].Value = empp.PlaceBirth;
+                row.Cells[5].Value = empp.Depart;
+            }
+        }
+
+        private void btthoat_Click(object sender, EventArgs e)
+        {
+            DialogResult f = MessageBox.Show("Ban se thoat khoi trang", "Thong Bao", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (f == DialogResult.Yes)
+            {
+                this.Close();
+                Application.Exit();
+            }
+        }
     }
 }

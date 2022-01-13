@@ -238,6 +238,7 @@
             this.btsua.TabIndex = 14;
             this.btsua.Text = "Sửa";
             this.btsua.UseVisualStyleBackColor = true;
+            this.btsua.Click += new System.EventHandler(this.btsua_Click);
             // 
             // btthoat
             // 
@@ -247,6 +248,7 @@
             this.btthoat.TabIndex = 15;
             this.btthoat.Text = "Thoát";
             this.btthoat.UseVisualStyleBackColor = true;
+            this.btthoat.Click += new System.EventHandler(this.btthoat_Click);
             // 
             // Form1
             // 
